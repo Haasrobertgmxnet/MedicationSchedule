@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:viewmodels="clr-namespace:MedicationSchedule.ViewModels" 
+             x:DataType="viewmodels:MedicationSchedulePageViewModel"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MedicationSchedule.Views.MedicationSchedulePage"
+             Title="Medication Schedule Page">
+    <StackLayout>
+        <Label Text="{Binding WhenStr}"/>
+        <Label Text="{Binding WhichSide}"/>
+        <CheckBox IsChecked="{Binding IsDone, Mode=TwoWay}" >
+            <CheckBox.Behaviors>
+                <prism:EventToCommandBehavior EventName="CheckedChanged"
+                                          Command="{Binding SetDoneCommand}" />
+            </CheckBox.Behaviors>
+        </CheckBox>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MedicationSchedule.Views.CreateMedicationSchedulePage"
+             Title="Create MedicationSchedulePage">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Anzahl der Tage: "/>
+            <Entry Text="{Binding Number}"/>
+        </StackLayout>
+        <Picker x:Name="picker" Title="Erste Spritze: ">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Links</x:String>
+                    <x:String>Rechts</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <StackLayout Orientation="Horizontal">
+            <DatePicker MinimumDate="{Binding MinDate}"
+            Date="{Binding SelectedDate}" 
+            Format="D" Margin="30, 0, 0, 30" />
+        </StackLayout>
+        <Button Text="Create Medications" Command="{Binding CreateMedications}" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MedicationSchedule.Views.MainPage"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:models="clr-namespace:MedicationSchedule.Models"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Hello to  Medication Schedule App!" />
+        <Button Text="Create New Schedule" Command="{prism:NavigateTo 'CreateMedicationSchedulePage'}"/>
+        <Button Text="Open Schedule Current Item" Command="{prism:NavigateTo 'MedicationSchedulePage'}"/>
+        <Button Text="Open Schedule List View" Command="{prism:NavigateTo 'MedicationScheduleListViewPage'}"/>
+    </StackLayout>
+
+</ContentPage>
